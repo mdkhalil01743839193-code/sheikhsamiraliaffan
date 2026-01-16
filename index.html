@@ -28,42 +28,30 @@
   </div>
 </section>
 
-<!-- ABOUT (FULL BIO – উপরে আনা হয়েছে) -->
+<!-- ABOUT (FULL BIO) -->
 <section class="section">
   <div class="glow-box about-box">
-    <div class="about-text full">
+    <div class="about-text">
       <h2>Who is Sheikh Samir Ali Affan?</h2>
-
       <p>
         Sheikh Samir Ali Affan is a Bangladeshi cybersecurity specialist, ethical hacker,
-        web developer, and programmer, actively working to strengthen digital safety and
-        cybersecurity awareness across Bangladesh and South Asia.
+        web developer, and programmer working on digital safety and cybersecurity
+        awareness across Bangladesh and South Asia.
       </p>
-
       <p>
-        He works as an advanced cybersecurity researcher and ethical hacking professional,
-        focusing on protecting digital identities, securing web systems, and mitigating
-        modern cyber threats through ethical and responsible practices.
+        He focuses on ethical hacking, vulnerability assessment, penetration testing,
+        secure coding, phishing and scam analysis, website security testing, and cyber
+        awareness initiatives.
       </p>
-
-      <p>
-        His expertise includes ethical hacking, vulnerability assessment, penetration
-        testing, secure coding, phishing and scam analysis, website security testing,
-        and cybersecurity awareness initiatives.
-      </p>
-
       <p>
         He actively works against spam, phishing, fake accounts, impersonation,
-        digital harassment, and online fraud, and assists individuals and organizations
-        with account recovery and digital risk prevention.
+        digital harassment, and online fraud, helping individuals and organizations
+        stay secure online.
       </p>
-
       <p>
-        He is the founder of <strong>BanglaSafe</strong>, a digital safety initiative
-        dedicated to cybersecurity awareness, online protection, and responsible use
-        of technology in Bangladesh.
+        Founder of <strong>BanglaSafe</strong>, a digital safety initiative dedicated to
+        responsible use of technology.
       </p>
-
       <p class="quote">
         “Cybersecurity is not just a profession — it is a responsibility.”
       </p>
@@ -71,20 +59,17 @@
   </div>
 </section>
 
-<!-- TRIBUTE (ফাঁকা জায়গার ব্লক) -->
-<section class="section tribute-section">
+<!-- TRIBUTE -->
+<section class="section">
   <div class="glow-box tribute-box">
-
     <div class="map-flag-wrap">
-      <img src="bangla-map.png" alt="Akhand Bangla Map" class="bangla-map">
-      <img src="bd-flag.png" alt="Bangladesh Flag" class="bd-flag">
+      <img src="bangla-map.png" class="bangla-map" alt="Akhand Bangla">
+      <img src="bd-flag.png" class="bd-flag" alt="Bangladesh Flag">
     </div>
-
     <div class="justice-text">
       Justice for
       <span>শহিদ শরিফ ওসমান হাদি</span>
     </div>
-
   </div>
 </section>
 
@@ -100,7 +85,7 @@
 
 <!-- SKILLS -->
 <section class="section">
-  <div class="glow-box skills-box">
+  <div class="glow-box">
     <h2>Core Expertise</h2>
     <div class="skills-grid">
       <div class="skill-box">Cybersecurity Researcher</div>
@@ -115,28 +100,27 @@
   </div>
 </section>
 
-<!-- TERMINAL -->
-<section class="section">
-  <div class="glow-box terminal-box">
-    <div id="terminal-output"></div>
-    <input id="terminal-input" placeholder="type command and press enter">
-  </div>
-</section>
-
-<!-- CONTROLS -->
-<button id="modeToggle">CYBER MODE</button>
-<button id="musicToggle">🔇 Music OFF</button>
-
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
+<button id="musicToggle">🔇 Music OFF</button>
 
 <footer>
   © 2020 Sheikh Samir Ali Affan | BanglaSafe
 </footer>
 
-<script src="script.js"></script>
-<script src="loader.js"></script>
+<!-- SCRIPTS (ORDER IS IMPORTANT) -->
+<script src="script.js" defer></script>
+<script src="loader.js" defer></script>
+
+<!-- HARD FAIL-SAFE -->
+<script>
+  setTimeout(()=>{
+    const l=document.getElementById("loader");
+    if(l) l.style.display="none";
+  },4000);
+</script>
+
 </body>
-  </html>
+      </html>
