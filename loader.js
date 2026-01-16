@@ -1,49 +1,41 @@
 const lines = [
-  "Establishing Secure Connection...",
-  "Authenticating Identity...",
-  "Initializing Cybersecurity Systems...",
-  "Session Authorized"
+  "ইসলাম জিন্দাবাদ",
+  "নারায়ে তাকবীর, আল্লাহু আকবার",
+  "আমি কেরানীগঞ্জ থেকে শেখ সামির আলি আফফান"
 ];
-
-const bootText = document.getElementById("bootText");
-const loader = document.getElementById("loader");
-const logo = document.getElementById("loaderLogo");
-const sound = document.getElementById("bootSound");
 
 let lineIndex = 0;
 let charIndex = 0;
 
-sound.play().catch(()=>{});
+const bootText = document.getElementById("bootText");
+const loader = document.getElementById("loader");
+const logo = document.getElementById("loaderLogo");
 
 function typeLine() {
   if (lineIndex < lines.length) {
     if (charIndex < lines[lineIndex].length) {
       bootText.textContent += lines[lineIndex][charIndex];
       charIndex++;
-      setTimeout(typeLine, 45);
+      setTimeout(typeLine, 70);
     } else {
-      if (lineIndex === lines.length - 1) {
-        bootText.classList.add("shift");
-      }
       bootText.textContent += "\n";
       charIndex = 0;
       lineIndex++;
-      if (lineIndex === lines.length) {
-        setTimeout(revealLogo, 900);
-      } else {
-        setTimeout(typeLine, 500);
-      }
+      setTimeout(typeLine, 600);
     }
-  }
-}
+  } else {
+    // logo reveal
+    logo.classList.add("show");
 
-function revealLogo() {
-  logo.classList.add("show");
-  setTimeout(() => loader.classList.add("fade"), 1200);
-  setTimeout(() => {
-    loader.style.display = "none";
-    sound.pause();
-  }, 2300);
+    // loader fade out
+    setTimeout(() => {
+      loader.classList.add("fade");
+    }, 1200);
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 2300);
+  }
 }
 
 typeLine();
