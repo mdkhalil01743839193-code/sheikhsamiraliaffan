@@ -1,315 +1,115 @@
-/* =====================
-   GLOBAL RESET
-===================== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Courier New", monospace;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Courier New",monospace}
+body{background:#000;color:#00ff99;overflow-y:auto}
 
-body{
-  background:#000;
-  color:#00ff99;
-  overflow-y:auto;
-}
-
-/* =====================
-   COMMON
-===================== */
-.section{
-  padding:60px 6%;
-}
-
+/* COMMON */
+.section{padding:60px 6%}
 .glow-box{
   background:rgba(0,0,0,.65);
   border:1px solid #00ff99;
-  box-shadow:
-    0 0 14px rgba(0,255,153,.45),
-    inset 0 0 10px rgba(0,255,153,.15);
-  padding:30px;
-  border-radius:8px;
+  box-shadow:0 0 14px rgba(0,255,153,.45), inset 0 0 10px rgba(0,255,153,.15);
+  padding:30px;border-radius:8px
 }
 
-/* =====================
-   HERO
-===================== */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-box{
-  text-align:center;
-}
-
-.access{
-  color:#ff0040;
-  letter-spacing:3px;
-  margin-bottom:10px;
-}
-
-.hero h1{
-  font-size:2.2rem;
-}
-
-#typing{
-  margin-top:10px;
-  min-height:30px;
-}
-
-.tagline{
-  color:#aaa;
-  margin-top:10px;
-}
-
-.scroll-hint{
-  margin-top:28px;
-  font-size:12px;
-  color:#555;
-}
-
-/* PROFILE IMAGE */
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.hero-box{text-align:center}
+.access{color:#ff0040;letter-spacing:3px}
 .profile-pic{
-  width:160px;
-  border-radius:50%;
+  width:150px;border-radius:50%;
   border:3px solid #00ff99;
   box-shadow:0 0 20px rgba(0,255,153,.9);
-  margin:15px auto;
-  display:block;
+  margin:15px auto;display:block
 }
+.tagline{color:#aaa;margin-top:10px}
+.scroll-hint{margin-top:20px;font-size:12px;color:#555}
 
-/* =====================
-   ABOUT
-===================== */
-.about-box{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
-  align-items:flex-start;
+/* ABOUT */
+.about-text{max-width:900px;margin:auto}
+.about-text p{margin-bottom:12px;line-height:1.7}
+.quote{color:#ff0040;font-style:italic}
+
+/* TRIBUTE */
+.tribute-box{text-align:center}
+.map-flag-wrap{position:relative;max-width:420px;margin:0 auto 25px}
+.bangla-map{
+  width:100%;opacity:.25;
+  filter:drop-shadow(0 0 18px rgba(0,255,153,.5))
 }
-
-.about-text{
-  max-width:900px;
-  margin:auto;
+.bd-flag{
+  position:absolute;top:50%;left:50%;
+  width:65%;transform:translate(-50%,-50%);
+  animation:flagWave 6s ease-in-out infinite;
+  filter:drop-shadow(0 0 25px rgba(0,255,153,.7))
 }
-
-.about-text h2{
-  margin-bottom:15px;
-}
-
-.about-text p{
-  margin-bottom:12px;
-  line-height:1.7;
-}
-
-.quote{
-  color:#ff0040;
-  font-style:italic;
-}
-
-/* =====================
-   TRIBUTE SECTION
-===================== */
-.tribute-box{
-  text-align:center;
-}
-
-/* VIDEO / IMAGE HOLDER */
-.video-wrap{
-  position:relative;
-  max-width:560px;
-  margin:0 auto 30px;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 0 30px rgba(0,255,153,.5);
-}
-
-/* HADIR PHOTO */
-.hadi-photo{
-  width:180px;
-  max-width:60%;
-  border-radius:12px;
-  border:3px solid #ff002b;
-  box-shadow:
-    0 0 15px rgba(255,0,43,.6),
-    0 0 30px rgba(255,0,43,.4);
-  margin:15px auto;
-  display:block;
+@keyframes flagWave{
+  0%{transform:translate(-50%,-50%) rotate(0)}
+  50%{transform:translate(-50%,-50%) rotate(1.5deg)}
+  100%{transform:translate(-50%,-50%) rotate(0)}
 }
 
 /* JUSTICE TEXT */
 .justice-text{
-  margin-top:20px;
-  font-size:2.6rem;
-  font-weight:900;
-  color:#ff002b;
-  letter-spacing:1px;
+  margin-top:20px;font-size:2.3rem;font-weight:900;
+  color:#ff002b;letter-spacing:1px;
   animation:justicePulse 2.8s ease-in-out infinite;
-  text-shadow:
-    0 0 16px rgba(255,0,43,.8),
-    0 0 32px rgba(255,0,43,.5);
+  text-shadow:0 0 14px rgba(255,0,43,.7),0 0 28px rgba(255,0,43,.45)
 }
-
 .justice-text span{
-  display:block;
-  margin-top:12px;
-  font-size:1.9rem;
-  animation:justiceGlow 2.8s ease-in-out infinite;
+  display:block;margin-top:10px;font-size:1.6rem;
+  animation:justiceGlow 2.8s ease-in-out infinite
 }
-
 @keyframes justicePulse{
   0%{transform:scale(1);opacity:.85}
-  50%{transform:scale(1.08);opacity:1}
+  50%{transform:scale(1.06);opacity:1}
   100%{transform:scale(1);opacity:.9}
 }
-
 @keyframes justiceGlow{
-  0%{
-    text-shadow:0 0 14px rgba(255,0,43,.6),
-                0 0 28px rgba(255,0,43,.4);
-  }
-  50%{
-    text-shadow:0 0 30px rgba(255,0,43,1),
-                0 0 60px rgba(255,0,43,.9);
-  }
-  100%{
-    text-shadow:0 0 14px rgba(255,0,43,.6),
-                0 0 28px rgba(255,0,43,.4);
-  }
+  0%{text-shadow:0 0 12px rgba(255,0,43,.6),0 0 22px rgba(255,0,43,.4)}
+  50%{text-shadow:0 0 26px rgba(255,0,43,1),0 0 50px rgba(255,0,43,.8)}
+  100%{text-shadow:0 0 12px rgba(255,0,43,.6),0 0 22px rgba(255,0,43,.4)}
 }
 
-/* =====================
-   STATS
-===================== */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:20px;
-  text-align:center;
-}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center}
+.stats span{font-size:1.8rem;color:#ff0040}
 
-.stats span{
-  font-size:1.8rem;
-  color:#ff0040;
-}
-
-/* =====================
-   SKILLS
-===================== */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:20px;
-}
-
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px}
 .skill-box{
-  padding:15px;
-  border:1px solid #00ff99;
+  padding:15px;border:1px solid #00ff99;
   box-shadow:0 0 10px rgba(0,255,153,.45);
-  text-align:center;
+  text-align:center
 }
 
-/* =====================
-   TERMINAL
-===================== */
-.terminal-box{
-  background:#000;
-}
-
-#terminal-input{
-  width:100%;
-  background:#000;
-  border:none;
-  border-top:1px solid #00ff99;
-  color:#00ff99;
-  padding:10px;
-}
-
-/* =====================
-   BUTTONS
-===================== */
-#modeToggle,
+/* MUSIC BUTTON */
 #musicToggle{
-  position:fixed;
-  right:20px;
-  background:#000;
-  color:#00ff99;
-  border:1px solid #00ff99;
-  padding:8px 12px;
-  font-size:12px;
-  cursor:pointer;
-  z-index:1000;
+  position:fixed;bottom:20px;left:20px;
+  background:#000;color:#00ff99;border:1px solid #00ff99;
+  padding:8px 12px;font-size:12px;cursor:pointer
 }
 
-#modeToggle{bottom:20px}
-#musicToggle{bottom:60px}
-
-/* =====================
-   LOADER (SAFE TYPING)
-===================== */
+/* LOADER */
 #loader{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  transition:opacity .8s ease;
+  position:fixed;inset:0;background:#000;
+  display:flex;align-items:center;justify-content:center;
+  z-index:9999;transition:opacity .8s ease
 }
-
 .loader-bg{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(0,255,153,.08), transparent 60%),
-    linear-gradient(120deg, rgba(0,255,153,.05), transparent);
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,rgba(0,255,153,.08),transparent 60%),
+             linear-gradient(120deg,rgba(0,255,153,.05),transparent)
 }
-
-#bootText{
-  white-space:pre-wrap;
-  color:#00ff99;
-  font-size:14px;
-  line-height:1.6;
-  z-index:2;
-}
-
+#bootText{white-space:pre-wrap;color:#00ff99;z-index:2}
 #loaderLogo{
-  position:absolute;
-  bottom:20%;
-  opacity:0;
-  color:#fff;
-  letter-spacing:4px;
-  z-index:2;
+  position:absolute;bottom:20%;
+  opacity:0;color:#fff;letter-spacing:4px;z-index:2
 }
+#loaderLogo.show{opacity:1;animation:glow 1.5s infinite}
+@keyframes glow{50%{text-shadow:0 0 18px #00ff99}}
 
-#loaderLogo.show{
-  opacity:1;
-  animation:glow 1.5s infinite;
-}
+footer{text-align:center;color:#555;padding:20px}
 
-@keyframes glow{
-  50%{text-shadow:0 0 18px #00ff99;}
-}
-
-/* =====================
-   FOOTER
-===================== */
-footer{
-  text-align:center;
-  color:#555;
-  padding:20px;
-}
-
-/* =====================
-   MOBILE
-===================== */
 @media(max-width:600px){
-  .justice-text{font-size:2rem}
-  .justice-text span{font-size:1.4rem}
-  .profile-pic{width:130px}
-  }
+  .justice-text{font-size:1.9rem}
+  .justice-text span{font-size:1.3rem}
+}
